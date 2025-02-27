@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oi amor, sou eu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #d3fbd0;
+        margin: 0;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .ceu {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .nuvem {
+        position: absolute;
+        width: 150px;
+        height: 80px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 25px 15px 0px rgba(255, 255, 255, 0.8),
+            -25px 15px 0px rgba(255, 255, 255, 0.8),
+            0px -15px 0px rgba(255, 255, 255, 0.8);
+        opacity: 0.8;
+        animation: moverNuvem 15s linear infinite alternate;
+    }
+
+    .nuvem2 {
+        width: 200px;
+        height: 100px;
+        top: 15%;
+        left: 10%;
+        animation-duration: 20s;
+    }
+
+    .nuvem3 {
+        width: 170px;
+        height: 85px;
+        top: 25%;
+        right: 15%;
+        animation-duration: 18s;
+    }
+
+    .nuvem4 {
+        width: 120px;
+        height: 60px;
+        top: 35%;
+        left: 5%;
+        animation-duration: 16s;
+    }
+
+    .nuvem5 {
+        width: 140px;
+        height: 70px;
+        top: 10%;
+        right: 10%;
+        animation-duration: 22s;
+    }
+
+    .nuvem6 {
+        width: 180px;
+        height: 90px;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-duration: 25s;
+    }
+
+    @keyframes moverNuvem {
+        0% {
+            transform: translateX(-50px);
+        }
+
+        100% {
+            transform: translateX(50px);
+        }
+    }
+
+    .onda {
+        position: absolute;
+        bottom: 0;
+        width: 200%;
+        height: 150px;
+        background: rgba(0, 153, 255, 0.4);
+        clip-path: ellipse(50% 30% at 50% 70%);
+        animation: moverOnda 3s linear infinite alternate;
+    }
+
+    .onda2 {
+        position: absolute;
+        bottom: 0;
+        width: 200%;
+        height: 150px;
+        background: rgba(0, 102, 204, 0.5);
+        clip-path: ellipse(50% 30% at 50% 80%);
+        animation: moverOnda2 4s linear infinite alternate-reverse;
+    }
+
+    .onda3 {
+        position: absolute;
+        bottom: 0;
+        width: 200%;
+        height: 140px;
+        background: rgba(0, 153, 255, 0.3);
+        clip-path: ellipse(50% 28% at 50% 75%);
+        animation: moverOnda3 2.5s linear infinite alternate;
+    }
+
+    .onda4 {
+        position: absolute;
+        bottom: 0;
+        width: 200%;
+        height: 130px;
+        background: rgba(0, 102, 204, 0.4);
+        clip-path: ellipse(50% 25% at 50% 85%);
+        animation: moverOnda4 3.5s linear infinite alternate-reverse;
+    }
+
+    @keyframes moverOnda {
+        0% {
+            transform: translateX(-10px) translateY(5px);
+        }
+
+        100% {
+            transform: translateX(10px) translateY(-5px);
+        }
+    }
+
+    @keyframes moverOnda2 {
+        0% {
+            transform: translateX(10px) translateY(5px);
+        }
+
+        100% {
+            transform: translateX(-10px) translateY(-5px);
+        }
+    }
+
+    @keyframes moverOnda3 {
+        0% {
+            transform: translateX(-15px) translateY(7px);
+        }
+
+        100% {
+            transform: translateX(15px) translateY(-7px);
+        }
+    }
+
+    @keyframes moverOnda4 {
+        0% {
+            transform: translateX(12px) translateY(6px);
+        }
+
+        100% {
+            transform: translateX(-12px) translateY(-6px);
+        }
+    }
+
+    header {
+        background: #a6efa1;
+        margin: 5px;
+        padding: 4px;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .envelope {
+        position: relative;
+        width: 300px;
+        height: 225px;
+        background: #2cac3d;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .tampa {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 50%;
+        background: rgb(3, 99, 3);
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        transform-origin: top;
+        transition: transform 0.5s ease-in-out;
+        z-index: 2;
+    }
+
+    .carta {
+        position: center;
+        bottom: 0;
+        width: 90%;
+        height: 150px;
+        background: white;
+        left: 5%;
+        transform: translateY(100%);
+        transition: transform 0.5s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4em;
+        color: #162716;
+        border-radius: 10px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="ceu">
+        <div class="nuvem nuvem2"></div>
+        <div class="nuvem nuvem3"></div>
+        <div class="nuvem nuvem4"></div>
+        <div class="nuvem nuvem5"></div>
+        <div class="nuvem nuvem6"></div>
+    </div>
+    <div class="onda"></div>
+    <div class="onda2"></div>
+    <div class="onda3"></div>
+    <div class="onda4"></div>
+    <header>Oi meu amor, então...</header>
+    <div class="envelope" onclick="alternarCarta()">
+        <div class="tampa"></div>
+        <div class="carta">
+            <p class="mensagem">Sabia que eu amo:<br>Seus olhinhos.<br>Seu cheiro.<br>Seu toque.<br>Tudo aquilo que seus
+                olhos contam</p>
+        </div>
+    </div>
+    <button id="botaoCarta" onclick="alternarCarta()">Abrir Carta</button>
+    <script>
+        let aberta = false;
+        function alternarCarta() {
+            let tampa = document.querySelector(".tampa");
+            let carta = document.querySelector(".carta");
+            let mensagem = document.querySelector(".mensagem");
+            let botao = document.getElementById("botaoCarta");
+
+            if (!aberta) {
+                tampa.style.transform = "rotateX(180deg) translateY(-10px)";
+                carta.style.transform = "translateY(-15%)";
+                setTimeout(() => { mensagem.style.opacity = "1"; }, 500);
+                botao.innerText = "Fechar Carta";
+                aberta = true;
+            } else {
+                mensagem.style.opacity = "0";
+                carta.style.transform = "translateY(100%)";
+                tampa.style.transform = "rotateX(0deg)";
+                botao.innerText = "Abrir Carta";
+                aberta = false;
+            }
+        }
+    </script>
+</body>
+
+</html>
